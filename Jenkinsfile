@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'Maven'
-    }
-
     stages {
         stage('Clone') {
             steps {
@@ -14,14 +10,15 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'mvn clean compile'
+                bat '.\\maven\\apache-maven-3.9.15\\bin\\mvn.cmd clean compile'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                bat '.\\maven\\apache-maven-3.9.15\\bin\\mvn.cmd test'
             }
         }
     }
 }
+
