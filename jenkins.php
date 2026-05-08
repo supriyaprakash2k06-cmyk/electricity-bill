@@ -3,9 +3,9 @@ pipeline {
 
     stages {
 
-        stage('Clone Repository') {
+        stage('Clone') {
             steps {
-                git 'https://github.com/supriyaprakash2k06-cmyk/electricity-bill'
+                echo 'Cloning code...'
             }
         }
 
